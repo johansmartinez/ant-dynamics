@@ -2,8 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class Hormiguero:
-    def __init__(self, poblacion_inicial, tasa_crecimiento, tasa_muerte, factor_generacion, esperanza_vida, comida_inicial, tamano_inicial, salud_reina):
+    def __init__(self,alto_hormiguero, ancho_hormiguero, poblacion_inicial, tasa_crecimiento, tasa_muerte, factor_generacion, esperanza_vida, comida_inicial, tamano_inicial, salud_reina):
         self.poblacion = [poblacion_inicial]
+        self.alto=alto_hormiguero
+        self.ancho=ancho_hormiguero
         self.tasa_crecimiento = tasa_crecimiento
         self.tasa_muerte = tasa_muerte
         self.factor_generacion = factor_generacion
@@ -11,6 +13,7 @@ class Hormiguero:
         self.comida = [comida_inicial]
         self.tamano = [tamano_inicial]
         self.salud_reina = [salud_reina]
+        self.fig_poblacion = plt.figure(figsize=(5, 3))
 
     def simular_crecimiento(self, pasos):
         for _ in range(pasos):
@@ -53,6 +56,4 @@ class Hormiguero:
         plt.legend()
         plt.show()
 
-hormiguero = Hormiguero(poblacion_inicial=100, tasa_crecimiento=0.1, tasa_muerte=0.05, factor_generacion=0.05, esperanza_vida=2, comida_inicial=1000, tamano_inicial=10, salud_reina=1.0)
-hormiguero.simular_crecimiento(pasos=50)
-hormiguero.mostrar_grafico()
+
