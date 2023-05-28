@@ -67,10 +67,10 @@ class Hormiguero:
         return int(tiempo/self.vida_media_hormiga_reina)
     
 #poblacion_inicial, dias_simulacion, vida_media_hormiga_reina, tamano_hormiguero, comida_dia, max_huevos_esp, taza_mortalidad, taza_enfermedad
-p=Hormiguero(10, 9300, 930, 7000, 300, 1400, 0.5, 0.01)
+"""p=Hormiguero(10, 9300, 930, 7000, 300, 1400, 0.5, 0.01)
 
 plt.plot(p.tiempo, p.poblacion)
 plt.xlabel('dias')
 plt.ylabel('poblacion')
 plt.title('Poblacion')
-plt.show()
+plt.show()"""

@@ -1,4 +1,4 @@
-from model.Hormiguero import Hormiguero
+"""from model.Hormiguero import Hormiguero
 from view.InterfazHormiguero import InterfazHormiguero
 
 alto_hormiguero = 10
@@ -17,4 +17,8 @@ hormiguero.simular_crecimiento(100)
 hormiguero.mostrar_grafico()
 
 interfaz = InterfazHormiguero(hormiguero)
-interfaz.mostrar_interfaz()
+interfaz.mostrar_interfaz()"""
+from control.Controller import Controller
+
+control=Controller()
+control.io.ventana.mainloop()
