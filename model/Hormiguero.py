@@ -1,7 +1,6 @@
-import matplotlib.pyplot as plt
 
 class Hormiguero:
-    def __init__(self,poblacion_inicial, dias_simulacion, vida_media_hormiga_reina, tamano_hormiguero, comida_dia, max_huevos_esp, taza_mortalidad, taza_enfermedad):
+    def __init__(self,poblacion_inicial, dias_simulacion, vida_media_hormiga_reina, tamano_hormiguero, comida_dia, max_huevos_esp, tasa_mortalidad, tasa_enfermedad):
         self.poblacion = [poblacion_inicial]
         self.generacion_graf=[]
         self.salud_reina_graf=[]
@@ -13,8 +12,8 @@ class Hormiguero:
         self.tamano_hormiguero=tamano_hormiguero
         self.comida_dia=comida_dia
         self.max_huevos_esp=max_huevos_esp
-        self.taza_mortalidad=taza_mortalidad
-        self.taza_enfermedad=taza_enfermedad
+        self.tasa_mortalidad=tasa_mortalidad
+        self.tasa_enfermedad=tasa_enfermedad
         self.calcular_poblacion()
         
     def crear_vector(self,numero):
@@ -37,10 +36,10 @@ class Hormiguero:
         return self.muertes_natural(tiempo)+self.enfermas_dia(poblacion, tiempo)
     
     def enfermas_dia(self, poblacion, tiempo):
-        return (poblacion/(self.generacion(tiempo)+1))*self.taza_enfermedad
+        return (poblacion/(self.generacion(tiempo)+1))*self.tasa_enfermedad
     
     def muertes_natural(self,tiempo):
-        return self.nacimientos(tiempo)* self.taza_mortalidad
+        return self.nacimientos(tiempo)* self.tasa_mortalidad
         
     def nacimientos(self, tiempo):
         return self.tasa_natalidad(tiempo)
@@ -66,7 +65,7 @@ class Hormiguero:
     def generacion(self, tiempo):
         return int(tiempo/self.vida_media_hormiga_reina)
     
-#poblacion_inicial, dias_simulacion, vida_media_hormiga_reina, tamano_hormiguero, comida_dia, max_huevos_esp, taza_mortalidad, taza_enfermedad
+#poblacion_inicial, dias_simulacion, vida_media_hormiga_reina, tamano_hormiguero, comida_dia, max_huevos_esp, tasa_mortalidad, tasa_enfermedad
 """p=Hormiguero(10, 9300, 930, 7000, 300, 1400, 0.5, 0.01)
 
 plt.plot(p.tiempo, p.poblacion)
