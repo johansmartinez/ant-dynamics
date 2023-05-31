@@ -50,14 +50,14 @@ class InterfazHormiguero(ttk.Frame):
         self.boton_simular.place(x=180,y=365)
     
     def mostrar_grafica(self,x,y):
-        fig = plt.figure(figsize=(5, 4), dpi=100)
+        fig = plt.figure(figsize=(4, 3), dpi=100)
         ax = fig.add_subplot(111)
         ax.plot(x, y)
         # Crear el lienzo de la figura para tkinter
         canvas = FigureCanvasTkAgg(fig, master=self)
         canvas.draw()
         # Colocar el lienzo en el frame
-        canvas.get_tk_widget().place(x=300,y=25)
+        canvas.get_tk_widget().place(x=400,y=25)
         
     def get_variables(self):
         return [self.poblacion_inicial_txt.get(),self.dias_simulacion_txt.get(),self.vida_media_hormiga_reina_txt.get(),self.tamanio_hormiguero_txt.get(),self.comida_inicial_txt.get(),self.max_huevos_esp_txt.get(),self.tasa_muerte_txt.get(),self.tasa_enfermedad_txt.get()]
