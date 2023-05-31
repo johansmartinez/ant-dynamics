@@ -14,4 +14,4 @@ class Modelo(ttk.Frame):
     
     def ubicar_componentes(self):
         self.texto.place(x=20,y=20)
-        self.imagen_lb.place(x=50,y=40)
+        self.imagen_lb.place(x=70,y=50)

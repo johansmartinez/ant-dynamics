@@ -21,7 +21,7 @@ class Controller:
         self.hormiguero=Hormiguero(int(parametros[0]),int(parametros[1]),int(parametros[2]),int(parametros[3]),int(parametros[4]),int(parametros[5]),float(parametros[6]),float(parametros[7]))
         self.io.interfaz_hormiguero.mostrar_grafica(self.hormiguero.tiempo,self.hormiguero.poblacion)
     
-    def volver_menu(self):
+    def volver_menu(self,event):
         self.io.notebook.select(self.io.menu)
     
     def modelo(self,event):
